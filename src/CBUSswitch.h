@@ -48,8 +48,8 @@
 class CBUSSwitch {
 
 public:
-  void setPin(byte pin, byte pressedState);
-  void run(void);
+  virtual void setPin(byte pin, byte pressedState);
+  virtual void run(void);
   void reset(void);
   bool stateChanged(void);
   bool getState(void);
@@ -60,7 +60,7 @@ public:
   void resetCurrentDuration(void);
 
 protected:
-  byte readPin(byte pin);
+  virtual byte readPin(byte pin);
   byte _pin;
   byte _pressedState;
   byte _currentState;
